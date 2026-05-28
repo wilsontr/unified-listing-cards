@@ -1,0 +1,23 @@
+.DS_Store
+node_modules/
+coverage/
+
+# workspace installs
+apps/*/node_modules/
+packages/*/node_modules/
+
+# app outputs
+apps/*/.expo/
+apps/*/.next/
+apps/*/dist/
+apps/*/web-build/
+apps/*/android/
+apps/*/ios/
+
+# test artifacts
+*.tsbuildinfo
+vitest.config.ts.timestamp-*
+
+# local env
+.env
+.env.*

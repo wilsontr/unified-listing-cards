@@ -1,0 +1,22 @@
+{
+  "name": "unified-listing-cards",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev -w web",
+    "dev:mobile": "npm run start -w mobile",
+    "build:web": "npm run build -w web",
+    "lint": "npm run lint -w web",
+    "test": "npm run test -w web && npm run test -w mobile",
+    "typecheck": "npm run typecheck -w @workspace/shared && npm run typecheck -w web && npm run typecheck -w mobile"
+  },
+  "overrides": {
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-test-renderer": "19.2.3"
+  }
+}
