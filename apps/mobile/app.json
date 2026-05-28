@@ -29,7 +29,7 @@
     },
     "owner": "wilsontr",
     "runtimeVersion": {
-      "policy": "appVersion"
+      "policy": "sdkVersion"
     },
     "updates": {
       "url": "https://u.expo.dev/05e97e4a-94a2-45d9-a296-30bc0ce31be7"
