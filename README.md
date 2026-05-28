@@ -1,5 +1,8 @@
 # unified-listing-cards
 
+[![Tests](https://github.com/wilsontr/unified-listing-cards/actions/workflows/test.yml/badge.svg)](https://github.com/wilsontr/unified-listing-cards/actions/workflows/test.yml)
+[![Coverage](https://codecov.io/gh/wilsontr/unified-listing-cards/graph/badge.svg)](https://codecov.io/gh/wilsontr/unified-listing-cards)
+
 Cross-platform listing card prototype built with Next.js (web) and Expo (mobile), sharing hooks, data, view-model, tokens, and experiment logic from a common `packages/shared` package.
 
 **Live demo:** https://wilsontr.github.io/unified-listing-cards

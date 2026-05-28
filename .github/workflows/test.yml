@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: rm -f package-lock.json && npm install
+
+      - name: Test shared (with coverage)
+        run: npm run test -w @workspace/shared -- --coverage
+
+      - name: Test web (with coverage)
+        run: npm run test -w web -- --coverage
+
+      - name: Test mobile
+        run: npm run test -w mobile
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: packages/shared/coverage/lcov.info,apps/web/coverage/lcov.info
