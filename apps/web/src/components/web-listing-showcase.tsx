@@ -1,9 +1,14 @@
 "use client";
 
-import { ListingCard, useFeaturedListing } from "@workspace/shared";
+import {
+  ListingCard,
+  getListingCardVariant,
+  useFeaturedListing,
+} from "@workspace/shared";
 
 export function WebListingShowcase() {
   const { cycleListing, listing, listingCount } = useFeaturedListing();
+  const variant = getListingCardVariant("listing-card-highlight");
 
   return (
     <section className="grid gap-8 rounded-[2rem] border border-slate-200/70 bg-white/90 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
@@ -31,6 +36,7 @@ export function WebListingShowcase() {
         actionLabel="Open listing"
         listing={listing}
         onPress={cycleListing}
+        variant={variant}
       />
     </section>
   );

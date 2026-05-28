@@ -11,7 +11,7 @@
     "dev:mobile": "npm run start -w mobile",
     "build:web": "npm run build -w web",
     "lint": "npm run lint -w web",
-    "test": "npm run test -w web && npm run test -w mobile",
+    "test": "npm run test -w @workspace/shared && npm run test -w web && npm run test -w mobile",
     "typecheck": "npm run typecheck -w @workspace/shared && npm run typecheck -w web && npm run typecheck -w mobile"
   },
   "overrides": {

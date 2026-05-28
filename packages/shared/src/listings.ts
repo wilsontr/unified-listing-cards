@@ -6,6 +6,8 @@ export type Listing = {
   badge: string;
   summary: string;
   amenities: string[];
+  allInPrice?: string;
+  scarcityNote?: string;
 };
 
 export const FEATURED_LISTINGS: Listing[] = [
@@ -18,6 +20,8 @@ export const FEATURED_LISTINGS: Listing[] = [
     summary:
       "A warm, courtyard-first stay with mountain views, terrazzo floors, and enough outdoor space to host a late dinner under the lights.",
     amenities: ["Pool", "Outdoor dining", "Fast Wi-Fi"],
+    allInPrice: "$504 / night incl. fees",
+    scarcityNote: "2 left at this price",
   },
   {
     id: "canal-loft-retreat",
@@ -28,6 +32,7 @@ export const FEATURED_LISTINGS: Listing[] = [
     summary:
       "Quiet mornings, oversized windows, and a compact work zone make this one ideal for longer stays without feeling like a corporate rental.",
     amenities: ["Dedicated desk", "Canal view", "Self check-in"],
+    allInPrice: "$378 / night incl. fees",
   },
   {
     id: "forest-glass-cabin",
@@ -38,5 +43,6 @@ export const FEATURED_LISTINGS: Listing[] = [
     summary:
       "A small-footprint cabin with a wall of windows, cedar-lined interiors, and direct access to quiet trails after breakfast.",
     amenities: ["Wood stove", "Trail access", "Pet friendly"],
+    allInPrice: "$322 / night incl. fees",
   },
 ];

@@ -1,10 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { ListingCard, useFeaturedListing } from "@workspace/shared";
+import {
+  ListingCard,
+  getListingCardVariant,
+  useFeaturedListing,
+} from "@workspace/shared";
 import { Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function App() {
   const { cycleListing, listing, listingCount } = useFeaturedListing();
+  const variant = getListingCardVariant("listing-card-highlight");
 
   return (
     <SafeAreaProvider>
@@ -27,6 +32,7 @@ export default function App() {
             actionLabel={`Show another listing (${listingCount} total)`}
             listing={listing}
             onPress={cycleListing}
+            variant={variant}
           />
         </View>
       </SafeAreaView>
