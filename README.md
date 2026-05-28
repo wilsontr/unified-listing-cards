@@ -4,10 +4,6 @@ Cross-platform listing card prototype built with Next.js (web) and Expo (mobile)
 
 **Live demo:** https://wilsontr.github.io/unified-listing-cards
 
-**Mobile (Expo Go):** scan the QR code below with the [Expo Go](https://expo.dev/go) app, or open the link on your device.
-
-[![Open in Expo Go](screenshots/expo-qr.png)](https://expo.dev/accounts/wilsontr/projects/unified-listing-cards/updates)
-
 ## Screenshots
 
 ### Web
