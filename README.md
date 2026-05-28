@@ -2,6 +2,12 @@
 
 Cross-platform listing card prototype built with Next.js (web) and Expo (mobile), sharing hooks, data, view-model, tokens, and experiment logic from a common `packages/shared` package.
 
+**Live demo:** https://wilsontr.github.io/unified-listing-cards
+
+**Mobile (Expo Go):** scan the QR code below with the [Expo Go](https://expo.dev/go) app, or open the link on your device.
+
+[![Open in Expo Go](https://qr.expo.dev/expo-go?owner=wilsontr&slug=mobile&servicetype=classic&releaseChannel=default)](https://expo.go/expo-go?owner=wilsontr&slug=mobile)
+
 ## Screenshots
 
 ### Web
