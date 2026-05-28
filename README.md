@@ -78,6 +78,32 @@ npm test
 | Accent color          | teal-700 (light theme)                   | teal-300 (dark theme)                      |
 | Scarcity signal color | teal-700 (`webTokens.accentFg`)          | amber-300 (warmer on dark background)      |
 
+## Patterns
+
+### Presentation Model
+
+`getListingViewModel(listing)` is a pure function that accepts a raw `Listing` and returns a `ListingViewModel` — a derived, display-oriented object. Components never compute display strings themselves; they only read from the view-model.
+
+This keeps three concerns cleanly separated:
+
+- **Data contract** (`Listing`) — the shape of the data coming from a store or API
+- **View-model** (`ListingViewModel`) — formatting, fallbacks, and derived booleans (e.g. `isHighlighted`, `allInPriceLabel`)
+- **Component** — layout and platform-specific rendering only
+
+The practical benefit: both `ListingCard.web.tsx` and `ListingCard.native.tsx` call the same `getListingViewModel()` and get identical computed values, so display logic is never duplicated between platforms.
+
+### Feature Toggle / Toggle Router
+
+`getListingCardVariant(key)` is a Toggle Router — it maps a flag key to a `ListingCardVariant` value (`"control"` | `"compact"` | `"highlighted"`). The component is the Toggle Point: it receives the resolved variant as a prop and renders accordingly, but never decides its own variant.
+
+```
+call site → getListingCardVariant("listing-card-highlight") → "highlighted"
+                                                                    ↓
+                                          <ListingCard variant="highlighted" />
+```
+
+This means experiment logic lives entirely in `experiments.ts`. Swapping a flag from `"control"` to `"highlighted"` in `FLAG_MAP` changes the rendered output without touching any component code. The same pattern extends naturally to a remote feature flag service — `getListingCardVariant` would fetch from the service instead of a static map, and nothing else changes.
+
 ## Web: before and after hydration
 
 The web card is fully server-rendered. On first load:
